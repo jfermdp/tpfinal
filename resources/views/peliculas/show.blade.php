@@ -4,9 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header"><button type="button" class="btn btn-primary">+ Agregar a Mi Lista</button>
-                </div>
+            <div class="card"> <h1>Peliculas {{$pelicula}}</h1>  </div>
 
                 <div class="card-body">
                     @if (session('status'))

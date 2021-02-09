@@ -26,5 +26,8 @@ Route::get('/home', [HomeController::class,'index']);
 
 Route::get('peliculas', [PeliculaController::class,'index']);
 Route::get('peliculas/create', [PeliculaController::class,'create']);
+
+Route::post('peliculas', [PeliculaController::class,'store'])->name('peliculas.store');
+
 Route::get('peliculas/{pelicula}', [PeliculaController::class,'show']);
 

@@ -15,13 +15,13 @@ class CreatePeliculasTable extends Migration
     {
         Schema::create('peliculas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
+            $table->string('titulo');
             $table->integer('estreno');
             $table->integer('Id_genero');
             $table->integer('Id_director');
-            $table->integer('Id_actor1');
-            $table->integer('Id_actor2');
-            $table->integer('Id_actor3');
+            $table->integer('Id_artista1');
+            $table->integer('Id_artista2');
+            $table->integer('Id_artista3');
             $table->string('portada');
             $table->text('resumen');
             $table->timestamps();

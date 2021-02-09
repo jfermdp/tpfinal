@@ -3,10 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><button type="button" class="btn btn-primary">+ Agregar a Mi Lista</button>
-                </div>
+                <div class="card-header">  <a name="" id="" class="btn btn-primary" href="peliculas/create" role="button">+ Agregar a Mi Lista</a>  </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('Bienvenido!') }}
+                    {{ __('Bienvenido!!!') }}
+                    {{Auth::user()}}  {{Auth::id()}} {{ Auth::user()->name }}
                 </div>
             </div>
         </div>
