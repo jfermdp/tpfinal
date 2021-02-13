@@ -4,7 +4,7 @@
 
 
                     <div class="contenedor">
-                        <img src="{{ asset('/storage/portadas/'. $pelicula->portada) }}" alt="Avatar" class="card-img-top image imagen_p" style="width:100%">
+                        <img src="{{ asset('/storage/portadas/'. $pelicula->portada) }}" alt="Portada" class="card-img-top image imagen_p" style="width:100%;min-height:350px">
                        
                         <div class="middle">
                           <div class="texto"><h5>Resumen: </h5> {{ $pelicula->resumen }}</div>
@@ -15,8 +15,11 @@
 
 
                     <div class="card-body">
-                        <h4 class="card-title">{{ $pelicula->titulo }}</h4>
-                      {{ $pelicula->genero }} ({{ $pelicula->estreno }}) <hr class="mt-2 mb-2"/>
+                        <div style="height: 90px">    
+                        <p class="text-2xl">{{ $pelicula->titulo }}</p>
+                      {{ $pelicula->genero }} ({{ $pelicula->estreno }}) 
+                        </div>
+                      <hr class="mt-2 mb-2"/>
                       <strong>Director</strong> : {{ $pelicula->director }} <hr class="mt-2 mb-2"/>
                       <strong>Reparto:</strong>  <br class="mt-2 mb-2"/>
                       {{ $pelicula->actor1 }} <br class="mt-2 mb-2"/>
