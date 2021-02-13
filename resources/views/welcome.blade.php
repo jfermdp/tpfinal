@@ -4,12 +4,12 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-11">
 
 
                 <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Ultimos Ingresos!</h5>
+                    <div class="card-header bg-blue-400">
+                        <p class="text-2xl text-white">ULTIMOS INGRESOS</p>
                     </div>
 
                     <div class="card-body">
