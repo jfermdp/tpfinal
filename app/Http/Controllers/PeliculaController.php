@@ -10,8 +10,10 @@ use Illuminate\Http\Request;
 class PeliculaController extends Controller
 {
     public function index(){
-            return view('peliculas.index');
+        return view('peliculas.index');
     }
+
+
     public function create(){
         $generos=Genero::all();
         $artistas=Artista::all();
@@ -34,6 +36,8 @@ class PeliculaController extends Controller
        $pelicula->Id_artista3 = $request->Id_artista3;
        $pelicula->portada = $portada;
        $pelicula->resumen = $request->resumen;
+       $pelicula->Id_user = auth()->id();
+
 
        $pelicula->save();
 

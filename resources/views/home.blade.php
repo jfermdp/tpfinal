@@ -14,8 +14,9 @@
                         </div>
                     @endif
 
-                    {{ __('Bienvenido!!!') }}
-                    {{Auth::user()}}  {{Auth::id()}} {{ Auth::user()->name }}
+                 Pelis
+
+
                 </div>
             </div>
         </div>

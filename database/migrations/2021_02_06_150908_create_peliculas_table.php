@@ -24,6 +24,7 @@ class CreatePeliculasTable extends Migration
             $table->integer('Id_artista3');
             $table->string('portada');
             $table->text('resumen');
+            $table->integer('Id_user');
             $table->timestamps();
         });
     }
