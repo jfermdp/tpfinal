@@ -27,8 +27,13 @@
     <div id="app">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container">
+
+                
+
+
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    PELICULAS
+                    <p class="float-right"> <img src="{{ asset('/storage/imagenes/logo.png') }}" style="width:37px"
+                        class="float-left"> &nbsp PELICULAS </p>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

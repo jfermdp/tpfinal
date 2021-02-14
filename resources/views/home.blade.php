@@ -8,13 +8,14 @@
 
 
                 <div class="card">
-                    <div class="card-header bg-blue-400">
+                       <div class="card-header bg-blue-400">
+
                         <div class="row">
                             <div class="col">
                                 <p class="text-2xl text-white">MIS PELICULAS</p>
                             </div>
                             <div class="col">
-                                <a name="" id="" class="btn btn-primary float-right" href="peliculas/create" role="button">+ Agregar a Mi Lista</a>  
+                                <a name="" id="" class="btn bg-gray-500 text-white float-right" href="peliculas/create" role="button">+ Agregar a Mi Lista</a>  
                             </div>
                         </div>
                         

@@ -48,4 +48,8 @@ class PeliculaController extends Controller
         return view('peliculas.show',compact('pelicula'));
     }
     
+    public function destroy(Pelicula $pelicula){
+        $pelicula->delete();
+        return redirect()->route('home');
+    }
 }

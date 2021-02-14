@@ -36,3 +36,4 @@ Route::post('peliculas', [PeliculaController::class,'store'])->name('peliculas.s
 
 Route::get('peliculas/{pelicula}', [PeliculaController::class,'show']);
 
+Route::delete('peliculas/{pelicula}', [PeliculaController::class,'destroy'])->name('peliculas.destroy');

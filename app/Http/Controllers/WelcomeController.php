@@ -12,12 +12,11 @@ class WelcomeController extends Controller
                 ->join('generos', 'peliculas.Id_genero', '=', 'generos.id')
                 ->join('artistas AS d', 'peliculas.Id_director', '=', 'd.id')
                 ->join('artistas AS a1', 'peliculas.Id_artista1', '=', 'a1.id')
-                ->join('artistas AS a2', 'peliculas.Id_artista2', '=', 'a2.id')
-                ->join('artistas AS a3', 'peliculas.Id_artista3', '=', 'a3.id')
+                ->leftjoin('artistas AS a2', 'peliculas.Id_artista2', '=', 'a2.id')
+                ->leftjoin('artistas AS a3', 'peliculas.Id_artista3', '=', 'a3.id')
                 ->join('users', 'peliculas.Id_user', '=', 'users.id')
                 ->orderBy('id', 'desc')
                 ->paginate(4);
-
 
         return view('welcome',compact('peliculas'));
     }

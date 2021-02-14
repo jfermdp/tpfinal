@@ -22,10 +22,15 @@
             <hr class="mt-2 mb-2" />
             <strong>Director</strong> : {{ $pelicula->director }}
             <hr class="mt-2 mb-2" />
+            <div style="height: 90px">
             <strong>Reparto:</strong> <br class="mt-2 mb-2" />
             {{ $pelicula->actor1 }} <br class="mt-2 mb-2" />
-            {{ $pelicula->actor2 }} <br class="mt-2 mb-2" />
-            {{ $pelicula->actor3 }}
+            @if ($pelicula->actor2)
+            {{ $pelicula->actor2 }} <br class="mt-2 mb-2" />   
+            @endif  
+            {{ $pelicula->actor3 }}   
+           
+            </div>
             <hr class="mt-2 mb-2" />
             <p class="float-right"> <img src="{{ asset('/storage/imagenes/usuario1.png') }}" style="width:22px"
                     class="float-left"> {{ $pelicula->usuario }} </p>
