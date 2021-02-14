@@ -27,7 +27,7 @@ Route::get('/', [WelcomeController::class,'index']);
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [HomeController::class,'index']);
+Route::get('/home', [HomeController::class,'index'])->name('home');
 
 Route::get('peliculas', [PeliculaController::class,'index']);
 Route::get('peliculas/create', [PeliculaController::class,'create']);

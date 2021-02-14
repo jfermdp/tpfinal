@@ -40,6 +40,7 @@ class PeliculaController extends Controller
 
 
        $pelicula->save();
+       return redirect()->route('home');
 
     }
 
