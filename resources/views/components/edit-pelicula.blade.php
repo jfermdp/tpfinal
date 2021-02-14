@@ -26,28 +26,29 @@
             <strong>Director</strong> : {{ $pelicula->director }}
             <hr class="mt-2 mb-2" />
             <div style="height: 90px">
-            <strong>Reparto:</strong> <br class="mt-2 mb-2" />
-            {{ $pelicula->actor1 }} <br class="mt-2 mb-2" />
-            @if ($pelicula->actor2)
-            {{ $pelicula->actor2 }} <br class="mt-2 mb-2" />   
-            @endif 
-            {{ $pelicula->actor3 }}
+                <strong>Reparto:</strong> <br class="mt-2 mb-2" />
+                {{ $pelicula->actor1 }} <br class="mt-2 mb-2" />
+                @if ($pelicula->actor2)
+                    {{ $pelicula->actor2 }} <br class="mt-2 mb-2" />
+                @endif
+                {{ $pelicula->actor3 }}
             </div>
             <hr class="mt-2 mb-2" />
             <div class="row">
                 <div class="col-sm-4">
-                  
+
 
                 </div>
                 <div class="col-sm-4">
                     <form action="{{ route('peliculas.destroy', $pelicula) }}" method="post">
                         @csrf
                         @method('delete')
-                        <input type="image" src="{{ asset('/storage/imagenes/eliminar2.png') }}" alt="Submit" class="float-right">
+                        <input type="image" src="{{ asset('/storage/imagenes/borrar.png') }}" alt="Submit"
+                            class="float-right">
                     </form>
                 </div>
                 <div class="col-sm-4">
-                    <img src="{{ asset('/storage/imagenes/note2.png') }}">
+                    <img src="{{ asset('/storage/imagenes/editar.png') }}">
                 </div>
             </div>
 

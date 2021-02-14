@@ -32,7 +32,7 @@
            
             </div>
             <hr class="mt-2 mb-2" />
-            <p class="float-right"> <img src="{{ asset('/storage/imagenes/usuario1.png') }}" style="width:22px"
+            <p class="float-right"> <img src="{{ asset('/storage/imagenes/usuario.png') }}" style="width:22px"
                     class="float-left"> {{ $pelicula->usuario }} </p>
         </div>
     </div>
