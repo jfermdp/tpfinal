@@ -35,10 +35,7 @@
             </div>
             <hr class="mt-2 mb-2" />
             <div class="row">
-                <div class="col-sm-4">
-
-
-                </div>
+                <div class="col-sm-4"> </div>
                 <div class="col-sm-4">
                     <form action="{{ route('peliculas.destroy', $pelicula) }}" method="post">
                         @csrf
@@ -48,7 +45,7 @@
                     </form>
                 </div>
                 <div class="col-sm-4">
-                    <img src="{{ asset('/storage/imagenes/editar.png') }}">
+                    <a href="{{route('peliculas.edit',$pelicula)}}"><img src="{{ asset('/storage/imagenes/editar.png') }}"></a> 
                 </div>
             </div>
 

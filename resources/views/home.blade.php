@@ -12,7 +12,7 @@
 
                         <div class="row">
                             <div class="col">
-                                <p class="text-2xl text-white">MIS PELICULAS</p>
+                                <p class="text-2xl text-white">Mis Películas</p>
                             </div>
                             <div class="col">
                                 <a name="" id="" class="btn bg-gray-500 text-white float-right" href="peliculas/create" role="button">+ Agregar a Mi Lista</a>  

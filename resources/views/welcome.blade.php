@@ -9,7 +9,7 @@
 
                 <div class="card">
                     <div class="card-header bg-blue-400">
-                        <p class="text-2xl text-white">ULTIMOS INGRESOS</p>
+                        <p class="text-2xl text-white">Ultimos Ingresos</p>
                     </div>
 
                     <div class="card-body">

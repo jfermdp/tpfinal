@@ -6,13 +6,14 @@
 
 
             <div class="col-md-12">
-                <form action="{{ route('peliculas.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('peliculas.update',$pelicula) }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('put')
                     <div class="card">
 
 
                         <div class="card-header bg-info text-white">
-                            <p class="text-2xl text-white">Ingreso de Películas</p>
+                            <p class="text-2xl text-white">Edición de Película</p>
                         </div>
 
 
@@ -22,7 +23,7 @@
                                     <div class="form-group">
                                         <label for="titulo">Titulo:</label>
                                         <input type="text" class="form-control" id="titulo"
-                                            placeholder="Ingrese Titulo de la Película" name="titulo" required>
+                                            placeholder="Ingrese Titulo de la Película" name="titulo" value="{{ $pelicula->titulo }}" required>
                                         <div class="valid-feedback">Valido.</div>
                                         <div class="invalid-feedback">Por favor complete este campo.</div>
                                     </div>
@@ -32,11 +33,13 @@
 <div class="row">
   <div class="col-md-8">
     <div class="form-group">
-      <label for="Id_genero">Genero:</label>
+      <label for="Id_genero">Genero: {{ $pelicula->Id_genero }}</label>
       <select class="form-control" name="Id_genero" id="Id_genero">
           <option value=''> Seleccione un Opción </option>
           @foreach ($generos as $genero)
-              <option value="{{ $genero['id'] }}">{{ $genero['nombre'] }}</option>
+              <option value="{{ $genero['id'] }}" 
+                @if ($pelicula->Id_genero==$genero['id']){{'selected'}}@endif >
+                {{ $genero['nombre'] }}</option>
           @endforeach
       </select>
   </div>
@@ -45,7 +48,7 @@
     <div class="form-group">
       <label for="estreno">Año:</label>
       <input type="number" class="form-control" id="estreno" min="1900" max="2200"
-          placeholder="Ingresa Año de Estreno" name="estreno" required>
+          placeholder="Ingresa Año de Estreno" name="estreno" value="{{ $pelicula->estreno }}" required>
       <div class="valid-feedback">Valido.</div>
       <div class="invalid-feedback">Por favor complete este campo.</div>
   </div>
@@ -59,7 +62,7 @@
 
                                     <div class="form-group">
                                       <label for="resumen">Resumen:</label>
-                                      <textarea class="form-control" rows="5" name="resumen" id="resumen"></textarea>
+                                      <textarea class="form-control" rows="5" name="resumen" id="resumen">{{ $pelicula->resumen }}</textarea>
                                   </div>
 
                                 </div>
@@ -70,7 +73,9 @@
                                         <select class="form-control" name="Id_director" id="Id_director">
                                             <option value=''> Seleccione un Opción </option>
                                             @foreach ($artistas as $artista)
-                                                <option value="{{ $artista['id'] }}">{{ $artista['nombre'] }}</option>
+                                                <option value="{{ $artista['id'] }}"
+                                                @if ($pelicula->Id_director==$artista['id']){{'selected'}}@endif
+                                                >{{ $artista['nombre'] }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -80,7 +85,9 @@
                                         <select class="form-control" name="Id_artista1" id="Id_artista1">
                                             <option value=''> Seleccione un Opción </option>
                                             @foreach ($artistas as $artista)
-                                                <option value="{{ $artista['id'] }}">{{ $artista['nombre'] }}</option>
+                                                <option value="{{ $artista['id'] }}"
+                                                @if ($pelicula->Id_artista1==$artista['id']){{'selected'}}@endif
+                                                >{{ $artista['nombre'] }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -90,7 +97,9 @@
                                         <select class="form-control" name="Id_artista2" id="Id_artista2">
                                             <option value=''> Seleccione un Opción </option>
                                             @foreach ($artistas as $artista)
-                                                <option value="{{ $artista['id'] }}">{{ $artista['nombre'] }}</option>
+                                                <option value="{{ $artista['id'] }}"
+                                                @if ($pelicula->Id_artista2==$artista['id']){{'selected'}}@endif
+                                                >{{ $artista['nombre'] }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -100,7 +109,9 @@
                                         <select class="form-control" name="Id_artista3" id="Id_artista3">
                                             <option value=''> Seleccione un Opción </option>
                                             @foreach ($artistas as $artista)
-                                                <option value="{{ $artista['id'] }}">{{ $artista['nombre'] }}</option>
+                                                <option value="{{ $artista['id'] }}"
+                                                @if ($pelicula->Id_artista3==$artista['id']){{'selected'}}@endif
+                                                >{{ $artista['nombre'] }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -112,7 +123,7 @@
 
                                   <div class="form-group">
                                         <label for="portada">Portada: </label>
-                                        <input class='btn btn-primary' type="file" name="portada" id="portada"
+                                        <input class='btn btn-primary' type="file" name="portada" id="portada" 
                                             placeholder="Seleccione Imagen de Portada" accept="image/*">
                                         @error('portada')
                                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -120,8 +131,10 @@
                                     </div>
 
                                     <img id="preview-image-before-upload"
-                                        src="{{ asset ('/storage/imagenes/imagen-no-disponible.jpg')}}"
-                                        alt="preview imagen" style="max-height: 250px;">
+                                        src="{{ asset('/storage/portadas/'.$pelicula->portada) }}"
+                                        alt="portada" style="max-height: 250px;">
+
+
 
                                 </div>
                             </div>
