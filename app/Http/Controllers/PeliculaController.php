@@ -21,7 +21,8 @@ class PeliculaController extends Controller
     }
 
     public function store(Request $request){
-       $request->validate(['portada' => 'required|image|max:2048',]);
+       $request->validate(['portada' => 'required|image|max:2048',
+       'titulo'=>'required','estreno'=>'required','resumen'=>'required','Id_genero'=>'required|not_in:0','Id_director'=>'required','Id_artista1'=>'required']);
        $portada = $request->file('portada')->getClientOriginalName();
        $request->file('portada')->storeAs('public/portadas',$portada);
        
@@ -59,12 +60,14 @@ class PeliculaController extends Controller
     }
 
     public function update(Request $request,Pelicula $pelicula){
-        $request->validate(['portada' => 'image|max:2048',]);
+        $request->validate(['portada' => 'image|max:2048',
+        'titulo'=>'required','estreno'=>'required','resumen'=>'required','Id_genero'=>'required']);
         if($request->portada<>''){
         $portada = $request->file('portada')->getClientOriginalName();
         $request->file('portada')->storeAs('public/portadas',$portada);
         $pelicula->portada = $portada;
         }
+        
         $pelicula->titulo = $request->titulo;
         $pelicula->estreno = $request->estreno;
         $pelicula->Id_genero = $request->Id_genero;

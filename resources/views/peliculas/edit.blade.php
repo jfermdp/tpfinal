@@ -35,7 +35,6 @@
     <div class="form-group">
       <label for="Id_genero">Genero: {{ $pelicula->Id_genero }}</label>
       <select class="form-control" name="Id_genero" id="Id_genero">
-          <option value=''> Seleccione un Opción </option>
           @foreach ($generos as $genero)
               <option value="{{ $genero['id'] }}" 
                 @if ($pelicula->Id_genero==$genero['id']){{'selected'}}@endif >
@@ -62,7 +61,7 @@
 
                                     <div class="form-group">
                                       <label for="resumen">Resumen:</label>
-                                      <textarea class="form-control" rows="5" name="resumen" id="resumen">{{ $pelicula->resumen }}</textarea>
+                                      <textarea class="form-control" rows="5" name="resumen" id="resumen" required>{{ $pelicula->resumen }}</textarea>
                                   </div>
 
                                 </div>
@@ -71,7 +70,6 @@
                                     <div class="form-group">
                                         <label for="Id_director">Director:</label>
                                         <select class="form-control" name="Id_director" id="Id_director">
-                                            <option value=''> Seleccione un Opción </option>
                                             @foreach ($artistas as $artista)
                                                 <option value="{{ $artista['id'] }}"
                                                 @if ($pelicula->Id_director==$artista['id']){{'selected'}}@endif
@@ -83,7 +81,6 @@
                                     <div class="form-group">
                                         <label for="Id_artista1">Protagonista 1:</label>
                                         <select class="form-control" name="Id_artista1" id="Id_artista1">
-                                            <option value=''> Seleccione un Opción </option>
                                             @foreach ($artistas as $artista)
                                                 <option value="{{ $artista['id'] }}"
                                                 @if ($pelicula->Id_artista1==$artista['id']){{'selected'}}@endif
@@ -95,7 +92,7 @@
                                     <div class="form-group">
                                         <label for="Id_artista2">Protagonista 2:</label>
                                         <select class="form-control" name="Id_artista2" id="Id_artista2">
-                                            <option value=''> Seleccione un Opción </option>
+                                            <option value='0'> Seleccione un Opción </option>
                                             @foreach ($artistas as $artista)
                                                 <option value="{{ $artista['id'] }}"
                                                 @if ($pelicula->Id_artista2==$artista['id']){{'selected'}}@endif
@@ -107,7 +104,7 @@
                                     <div class="form-group">
                                         <label for="Id_artista3">Protagonista 3</label>
                                         <select class="form-control" name="Id_artista3" id="Id_artista3">
-                                            <option value=''> Seleccione un Opción </option>
+                                            <option value='0'> Seleccione un Opción </option>
                                             @foreach ($artistas as $artista)
                                                 <option value="{{ $artista['id'] }}"
                                                 @if ($pelicula->Id_artista3==$artista['id']){{'selected'}}@endif
