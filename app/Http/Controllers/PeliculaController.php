@@ -76,12 +76,36 @@ class PeliculaController extends Controller
         $pelicula->Id_artista2 = $request->Id_artista2;
         $pelicula->Id_artista3 = $request->Id_artista3;
         $pelicula->resumen = $request->resumen;
- 
- 
+  
         $pelicula->save();
         return redirect()->route('home');
 
         $pelicula->save();
         return redirect()->route('home');
     }
+
+
+    public function find($Id_artista){
+      
+        $artista= Artista::where('id',$Id_artista)->first()->nombre;
+      
+        $peliculas = Pelicula::select('peliculas.*','generos.nombre as genero','d.nombre as director','a1.nombre as actor1','a2.nombre as actor2','a3.nombre as actor3','users.name as usuario')
+                ->join('generos', 'peliculas.Id_genero', '=', 'generos.id')
+                ->join('artistas AS d', 'peliculas.Id_director', '=', 'd.id')
+                ->join('artistas AS a1', 'peliculas.Id_artista1', '=', 'a1.id')
+                ->leftjoin('artistas AS a2', 'peliculas.Id_artista2', '=', 'a2.id')
+                ->leftjoin('artistas AS a3', 'peliculas.Id_artista3', '=', 'a3.id')
+                ->join('users', 'peliculas.Id_user', '=', 'users.id')
+                ->where('Id_director',$Id_artista)
+                ->orwhere('Id_artista1',$Id_artista)
+                ->orwhere('Id_artista2',$Id_artista)
+                ->orwhere('Id_artista3',$Id_artista)
+                ->orderBy('id', 'desc')
+                ->paginate(4);
+
+        return view('welcome',compact('peliculas','artista'));
+
+       }
+
+
 }

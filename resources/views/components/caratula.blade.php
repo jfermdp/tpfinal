@@ -20,15 +20,15 @@
                 {{ $pelicula->genero }} ({{ $pelicula->estreno }})
             </div>
             <hr class="mt-2 mb-2" />
-            <strong>Director</strong> : {{ $pelicula->director }}
+            <strong>Director:</strong> <a href="{{route('peliculas.find',$pelicula->Id_director)}}"> {{ $pelicula->director }} </a> 
             <hr class="mt-2 mb-2" />
             <div style="height: 90px">
             <strong>Reparto:</strong> <br class="mt-2 mb-2" />
-            {{ $pelicula->actor1 }} <br class="mt-2 mb-2" />
+            <a href="{{route('peliculas.find',$pelicula->Id_artista1)}}"> {{ $pelicula->actor1 }} </a> <br class="mt-2 mb-2" />
             @if ($pelicula->actor2)
-            {{ $pelicula->actor2 }} <br class="mt-2 mb-2" />   
+            <a href="{{route('peliculas.find',$pelicula->Id_artista2)}}"> {{ $pelicula->actor2 }} </a> <br class="mt-2 mb-2" />   
             @endif  
-            {{ $pelicula->actor3 }}   
+            <a href="{{route('peliculas.find',$pelicula->Id_artista3)}}"> {{ $pelicula->actor3 }} </a>  
            
             </div>
             <hr class="mt-2 mb-2" />

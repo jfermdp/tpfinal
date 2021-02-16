@@ -22,7 +22,8 @@
                                     <div class="form-group">
                                         <label for="titulo">Titulo:</label>
                                         <input type="text" class="form-control" id="titulo"
-                                            placeholder="Ingrese Titulo de la Película" name="titulo" required>
+                                            placeholder="Ingrese Titulo de la Película" name="titulo"
+                                            value="{{ old('titulo') }}" required>
                                     </div>
 
                                     <div class="row">
@@ -42,7 +43,8 @@
                                             <div class="form-group">
                                                 <label for="estreno">Año:</label>
                                                 <input type="number" class="form-control" id="estreno" min="1900" max="2200"
-                                                    placeholder="Estreno" name="estreno" required>
+                                                    value="{{ old('estreno') }}" placeholder="Estreno" name="estreno"
+                                                    required>
                                             </div>
                                         </div>
                                     </div>
@@ -50,18 +52,18 @@
                                     <div class="form-group">
                                         <label for="resumen">Resumen:</label>
                                         <textarea class="form-control" rows="5" name="resumen" id="resumen"
-                                            required></textarea>
+                                            value="{{ old('resumen') }}" required></textarea>
                                     </div>
 
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="Id_director">Director:</label>
+                                        <label for="Id_director">Director: {{ old('Id_director') }}</label>
                                         <select class="form-control" name="Id_director" id="Id_director" required>
                                             <option value=""> Seleccione un Opción </option>
                                             @foreach ($artistas as $artista)
-                                                <option value="{{ $artista['id'] }}">{{ $artista['nombre'] }}</option>
+                                                <option value="{{ $artista['id'] }}">{{ $artista['nombre'] }} </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -109,7 +111,7 @@
 
                                     <img id="preview-image-before-upload"
                                         src="{{ asset('/storage/imagenes/imagen-no-disponible.jpg') }}"
-                                        alt="preview imagen" style="max-height: 250px;">
+                                        style="max-height: 250px;">
 
                                 </div>
                             </div>
@@ -144,6 +146,7 @@
                 reader.readAsDataURL(this.files[0]);
             });
         });
+
     </script>
 
 @endsection

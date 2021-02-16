@@ -20,4 +20,11 @@ class WelcomeController extends Controller
 
         return view('welcome',compact('peliculas'));
     }
+
+
+    public function show($pelicula){
+        return view('peliculas.show',compact('pelicula'));
+    }
+
+   
 }

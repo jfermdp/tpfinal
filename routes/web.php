@@ -23,7 +23,6 @@ Route::get('/', function () {
 
 Route::get('/', [WelcomeController::class,'index']);
 
-
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -41,3 +40,6 @@ Route::delete('peliculas/{pelicula}', [PeliculaController::class,'destroy'])->na
 Route::get('peliculas/{pelicula}/edit', [PeliculaController::class,'edit'])->name('peliculas.edit');
 
 Route::put('peliculas/{pelicula}', [PeliculaController::class,'update'])->name('peliculas.update');
+
+Route::get('peliculas/find/{Id_artista}', [PeliculaController::class,'find'])->name('peliculas.find');
+

@@ -9,7 +9,28 @@
 
                 <div class="card">
                     <div class="card-header bg-blue-400">
-                        <p class="text-2xl text-white">Ultimos Ingresos</p>
+
+
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-2xl text-white"> Ultimos Ingresos
+                                    @isset($artista)
+                                        {{ $artista }}
+                                    @endisset
+                                </p>
+                            </div>
+                            <div class="col">
+                                @isset($artista)
+                                    <a class="btn bg-gray-500 text-white float-right" href="/" role="button">Mostrar Todos</a>
+                                @endisset
+                            </div>
+                        </div>
+
+
+
+
+
+
                     </div>
 
                     <div class="card-body">
@@ -27,7 +48,7 @@
                             @endforeach
                         </div>
                         <br>
-                        {{$peliculas->links()}}
+                        {{ $peliculas->links() }}
                     </div>
                 </div>
 
