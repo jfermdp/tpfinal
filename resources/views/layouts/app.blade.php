@@ -38,8 +38,12 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                &nbsp   
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+ 
+                    
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
@@ -47,6 +51,8 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+
+
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -80,6 +86,9 @@
                             </li>
                         @endguest
                     </ul>
+                    <a href="{{ route('peliculas.buscador') }}">
+                        <img src="{{ asset('/storage/imagenes/search.png') }}" style="width:37px" class="float-right"> 
+                    </a>
                 </div>
             </div>
         </nav>
