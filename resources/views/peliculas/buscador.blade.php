@@ -53,8 +53,6 @@
                             </div>
                         @endif
 
-
-
                         @isset($cant)
 
                             @if ($cant > 0)
@@ -69,7 +67,8 @@
                                         <tbody>
                                             @foreach ($sql as $item)
                                                 <tr>
-                                                    <td><a href="{{ route('peliculas.findp', $item->id) }}"> {{ $item['titulo'] }} </a></td>
+                                                    <td><a href="{{ route('peliculas.findp', $item->id) }}">
+                                                            {{ $item['titulo'] }} </a></td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

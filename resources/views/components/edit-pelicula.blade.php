@@ -9,7 +9,7 @@
 
             <div class="middle">
                 <div class="texto">
-                    <h5>Resumen: </h5> {{ $pelicula->resumen }}
+                    <strong>Resumen: </strong> {{ $pelicula->resumen }}
                 </div>
             </div>
 
