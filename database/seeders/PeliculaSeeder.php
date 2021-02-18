@@ -117,5 +117,44 @@ class PeliculaSeeder extends Seeder
         $pelicula->Id_user='1';      
         $pelicula->save();
 
+        $pelicula= new Pelicula();
+        $pelicula->titulo='Gambito de Dama';
+        $pelicula->estreno='2020';
+        $pelicula->Id_genero='6';
+        $pelicula->Id_director='76';
+        $pelicula->Id_artista1='6';    
+        $pelicula->Id_artista2='16';  
+        $pelicula->Id_artista3='9';  
+        $pelicula->portada='9.jpg';
+        $pelicula->resumen='Ambientada en la Guerra Fría; una huérfana llamada Beth Harmon con un don para el ajedrez lucha contra las adicciones mientras intenta ser la mejor jugadora del mundo.';
+        $pelicula->Id_user='1';      
+        $pelicula->save();
+
+        $pelicula= new Pelicula();
+        $pelicula->titulo='Joker';
+        $pelicula->estreno='2019';
+        $pelicula->Id_genero='6';
+        $pelicula->Id_director='80';
+        $pelicula->Id_artista1='42';    
+        $pelicula->Id_artista2='70';  
+        $pelicula->Id_artista3='85';  
+        $pelicula->portada='10.jpg';
+        $pelicula->resumen='En Gotham, Arthur Fleck, un comediante con problemas de salud mental, es marginado y maltratado por la sociedad. Se adentra en una espiral de crimen que resulta revolucionaria. Pronto conoce a su alter-ego, el Joker.';
+        $pelicula->Id_user='1';      
+        $pelicula->save();
+
+        $pelicula= new Pelicula();
+        $pelicula->titulo='John Wick';
+        $pelicula->estreno='2014';
+        $pelicula->Id_genero='1';
+        $pelicula->Id_director='14';
+        $pelicula->Id_artista1='50';    
+        $pelicula->Id_artista2='62';  
+        $pelicula->Id_artista3='3';  
+        $pelicula->portada='11.jpg';
+        $pelicula->resumen='Un ex asesino a sueldo suspende su jubilación para localizar a los mafiosos que mataron a su perro y le quitaron todo.';
+        $pelicula->Id_user='1';      
+        $pelicula->save();
+
     }
 }
