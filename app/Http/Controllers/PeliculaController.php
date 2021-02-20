@@ -193,4 +193,5 @@ class PeliculaController extends Controller
         
       return view('peliculas.buscador',compact('sql','tipobus','cant'));
     }
+
 }

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [WelcomeController::class,'index'])->name('welcome');
+Route::get('peliculas/find1', [PeliculaController::class,'find1'])->name('peliculas.find1');
 
 Auth::routes();
 
@@ -47,4 +48,3 @@ Route::get('peliculas/find/artista/{Id_artista}', [PeliculaController::class,'fi
 Route::get('peliculas/find/director/{Id_artista}', [PeliculaController::class,'findd'])->name('peliculas.findd');
 
 Route::get('peliculas/find/pelicula/{pelicula}', [PeliculaController::class,'findp'])->name('peliculas.findp');
-
