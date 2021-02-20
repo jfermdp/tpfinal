@@ -158,7 +158,7 @@ class PeliculaController extends Controller
     public function findp($Id_pelicula)
     {
 
-        $peliculas = Pelicula::select('peliculas.*','generos.nombre as genero', 'd.nombre as director', 'a1.nombre as actor1', 'a2.nombre as actor2', 'a3.nombre as actor3', 'users.name as usuario')
+        $peliculas = Pelicula::select('peliculas.*', 'generos.nombre as genero', 'd.nombre as director', 'a1.nombre as actor1', 'a2.nombre as actor2', 'a3.nombre as actor3', 'users.name as usuario')
             ->join('generos', 'peliculas.Id_genero', '=', 'generos.id')
             ->join('artistas AS d', 'peliculas.Id_director', '=', 'd.id')
             ->join('artistas AS a1', 'peliculas.Id_artista1', '=', 'a1.id')
@@ -173,25 +173,22 @@ class PeliculaController extends Controller
 
     public function busca()
     {
-      //  $peliculas = Artista::where('nombre', 'LIKE', 'brad' . '%')->get(); 
-      //  return view('peliculas.buscador', compact('peliculas'));
-      return view('peliculas.buscador');
+        return view('peliculas.buscador');
     }
 
     public function buscador(Request $request)
     {
-        $busca=trim($request->busca);
-        $tipobus=$request->tipobus;
+        $busca = trim($request->busca);
+        $tipobus = $request->tipobus;
 
-        if ($tipobus==1) {
-            $sql = Pelicula::where('titulo', 'LIKE', '%'.$busca.'%')->get(); 
-        }else{
-            $sql = Artista::where('nombre', 'LIKE', '%'.$busca.'%')->get(); 
+        if ($tipobus == 1) {
+            $sql = Pelicula::where('titulo', 'LIKE', '%' . $busca . '%')->get();
+        } else {
+            $sql = Artista::where('nombre', 'LIKE', '%' . $busca . '%')->get();
         }
-           
-        $cant = $sql->count();
-        
-      return view('peliculas.buscador',compact('sql','tipobus','cant'));
-    }
 
+        $cant = $sql->count();
+
+        return view('peliculas.buscador', compact('sql', 'tipobus', 'cant'));
+    }
 }

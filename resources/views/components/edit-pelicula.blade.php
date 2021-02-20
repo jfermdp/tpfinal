@@ -21,15 +21,18 @@
                 {{ $pelicula->genero }} ({{ $pelicula->estreno }})
             </div>
             <hr class="mt-2 mb-2" />
-            <strong>Director:</strong> <a href="{{route('peliculas.find',$pelicula->Id_director)}}"> {{ $pelicula->director }} </a>  
+            <strong>Director:</strong> <a href="{{ route('peliculas.find', $pelicula->Id_director) }}">
+                {{ $pelicula->director }} </a>
             <hr class="mt-2 mb-2" />
             <div style="height: 90px">
                 <strong>Reparto:</strong> <br class="mt-2 mb-2" />
-                <a href="{{route('peliculas.find',$pelicula->Id_artista1)}}"> {{ $pelicula->actor1 }} </a>  <br class="mt-2 mb-2" />
+                <a href="{{ route('peliculas.find', $pelicula->Id_artista1) }}"> {{ $pelicula->actor1 }} </a> <br
+                    class="mt-2 mb-2" />
                 @if ($pelicula->actor2)
-                <a href="{{route('peliculas.find',$pelicula->Id_artista2)}}"> {{ $pelicula->actor2 }} </a>  <br class="mt-2 mb-2" />
+                    <a href="{{ route('peliculas.find', $pelicula->Id_artista2) }}"> {{ $pelicula->actor2 }} </a> <br
+                        class="mt-2 mb-2" />
                 @endif
-                <a href="{{route('peliculas.find',$pelicula->Id_artista3)}}"> {{ $pelicula->actor3 }} </a>
+                <a href="{{ route('peliculas.find', $pelicula->Id_artista3) }}"> {{ $pelicula->actor3 }} </a>
             </div>
             <hr class="mt-2 mb-2" />
             <div class="row">
@@ -43,7 +46,8 @@
                     </form>
                 </div>
                 <div class="col-sm-4">
-                    <a href="{{route('peliculas.edit',$pelicula)}}"><img src="{{ asset('/storage/imagenes/editar.png') }}"></a> 
+                    <a href="{{ route('peliculas.edit', $pelicula) }}"><img
+                            src="{{ asset('/storage/imagenes/editar.png') }}"></a>
                 </div>
             </div>
 

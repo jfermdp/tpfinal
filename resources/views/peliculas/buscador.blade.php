@@ -2,12 +2,9 @@
 
 @section('content')
 
-
-
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-11">
-
 
                 <div class="card">
                     <div class="card-header bg-blue-400">
@@ -16,8 +13,6 @@
                             <div class="col">
                                 <p class="text-2xl text-white">Buscador </p>
                             </div>
-
-
 
                             <div class="col">
                                 <div class="float-right">
@@ -108,18 +103,11 @@
 
                         @endisset
 
-
-
-
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-
-
-
-
 
 @endsection

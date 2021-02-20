@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Resources\Actores;
 use Illuminate\Support\Facades\DB;
 
@@ -15,8 +16,6 @@ class ApiActoresController extends Controller
 
     public function get()
     {
-
-
         $artistas = DB::select(DB::raw("SELECT nombre as artista,count(*) as cant_de_peliculas from (
                 SELECT peliculas.Id_artista1 as Id_artista
                 FROM peliculas
@@ -28,8 +27,7 @@ class ApiActoresController extends Controller
                 FROM peliculas
                 ) peliculas INNER JOIN artistas ON peliculas.Id_artista=artistas.id 
                 GROUP BY artista ORDER BY cant_de_peliculas desc, artista"));
-        
+
         return new Actores($artistas);
-    
     }
 }

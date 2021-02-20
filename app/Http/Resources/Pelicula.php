@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+
 class Pelicula extends JsonResource
 {
     /**
@@ -16,11 +17,11 @@ class Pelicula extends JsonResource
         return [
             'titulo' => $this->titulo,
             'estreno' => $this->estreno,
-            'genero'=>$this->genero,
-            'director'=> $this->director,
-            'protagonista1'=>$this->actor1,
-            'protagonista2'=>$this->actor2,
-            'protagonista4'=>$this->actor3
+            'genero' => $this->genero,
+            'director' => $this->director,
+            'protagonista1' => $this->actor1,
+            'protagonista2' => $this->actor2,
+            'protagonista4' => $this->actor3
         ];
     }
 }

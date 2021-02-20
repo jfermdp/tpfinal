@@ -28,9 +28,6 @@
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container">
 
-                
-
-
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <p class="float-right"> <img src="{{ asset('/storage/imagenes/logo.png') }}" style="width:37px"
                         class="float-left"> &nbsp PELICULAS </p>
